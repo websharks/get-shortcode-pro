@@ -31,14 +31,14 @@ use function get_defined_vars as vars;
 /**
  * Uninstall utils.
  *
- * @since $v Initial release.
+ * @since 170308.52831 Initial release.
  */
 class Uninstaller extends SCoreClasses\SCore\Base\Core
 {
     /**
      * Other uninstall routines.
      *
-     * @since $v Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param int $site_counter Site counter.
      */

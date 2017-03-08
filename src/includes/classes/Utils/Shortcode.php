@@ -31,14 +31,14 @@ use function get_defined_vars as vars;
 /**
  * Shortcode utils.
  *
- * @since $v Initial release.
+ * @since 170308.52831 Initial release.
  */
 class Shortcode extends SCoreClasses\SCore\Base\Core
 {
     /**
      * Shortcode.
      *
-     * @since 17xxxx Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param array|string $atts      Shortcode attributes.
      * @param string|null  $content   Shortcode content.
@@ -78,7 +78,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Acquire all values.
      *
-     * @since 17xxxx Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param array|string $atts Shortcode atts.
      *
@@ -409,7 +409,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Stringify AOS values.
      *
-     * @since 17xxxx Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param array $atts   Shortcode atts.
      * @param array $values Array of all values.
@@ -464,7 +464,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Format values.
      *
-     * @since 17xxxx Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param array $atts   Shortcode atts.
      * @param array $values Array of all values.
@@ -525,7 +525,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Escape values.
      *
-     * @since 17xxxx Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param array $atts   Shortcode atts.
      * @param array $values Array of all values.
@@ -547,7 +547,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Maybe no-cache.
      *
-     * @since 17xxxx Initial release.
+     * @since 170308.52831 Initial release.
      *
      * @param array|string $atts Shortcode atts.
      */
