@@ -1,0 +1,31 @@
+project_title                               = Get Shortcode Pro
+
+project_owner                               = websharks
+project_slug                                = get-shortcode-pro
+
+project_text_domain                         = get-shortcode
+project_slack_channel                       = get-shortcode
+
+project_namespace                           = WebSharks\\WpSharks\\GetShortcode\\Pro
+project_sub_namespace                       = WpSharksGetShortcodePro
+
+project_lite_title                          = Get Shortcode
+project_lite_slug                           = get-shortcode
+project_lite_text_domain                    = get-shortcode
+
+project_lite_namespace                      = WebSharks\\WpSharks\\GetShortcode
+project_lite_sub_namespace                  = WpSharksGetShortcode
+
+project_version                             = %y%m%d.%now
+
+project_php_required_version                = 7.0.4
+project_php_tested_up_to_version            = ${php.version}
+project_php_required_bits                   = 64
+project_php_required_functions              =
+project_php_required_extensions             =
+
+project_wp_required_version                 = 4.7
+project_wp_tested_up_to_version             = 4.8
+
+project_wp_sharks_core_required_version     = 170308.51606
+project_wp_sharks_core_tested_up_to_version = 170308.51606

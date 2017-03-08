@@ -1,0 +1,33 @@
+# Copyright (C) 2017 Get Shortcode Pro
+# This file is distributed under the same license as the Get Shortcode Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Get Shortcode Pro 170308.52616\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/get-shortcode-pro\n"
+"POT-Creation-Date: 2017-03-08 14:36:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#. Plugin Name of the plugin/theme
+msgid "Get Shortcode Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wpsharks.com/product/get-shortcode-pro"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Shortcode to display various server-side info."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP Sharks™"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://wpsharks.com"
+msgstr ""
