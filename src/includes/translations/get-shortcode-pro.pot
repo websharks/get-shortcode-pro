@@ -1,10 +1,10 @@
-# Copyright (C) 2017 Get Shortcode Pro
-# This file is distributed under the same license as the Get Shortcode Pro package.
+# Copyright (C) 2017 [get] Shortcode Pro
+# This file is distributed under the same license as the [get] Shortcode Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Get Shortcode Pro 170308.53060\n"
+"Project-Id-Version: [get] Shortcode Pro 170308.53312\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/get-shortcode-pro\n"
-"POT-Creation-Date: 2017-03-08 14:44:45+00:00\n"
+"POT-Creation-Date: 2017-03-08 14:48:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. Plugin Name of the plugin/theme
-msgid "Get Shortcode Pro"
+msgid "[get] Shortcode Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

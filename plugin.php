@@ -4,9 +4,9 @@
  *
  * @wp-plugin
  *
- * Version: 170308.53060
+ * Version: 170308.53312
  * Text Domain: get-shortcode
- * Plugin Name: Get Shortcode Pro
+ * Plugin Name: [get] Shortcode Pro
  *
  * Author: WP Sharks™
  * Author URI: https://wpsharks.com
