@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '170308.53312'; //v//
+    const VERSION = '170311.42794'; //v//
 
     /**
      * Constructor.
@@ -81,7 +81,60 @@ class App extends SCoreClasses\App
             ],
 
             '§pro_option_keys' => [],
-            '§default_options' => [],
+            '§default_options' => [
+                'whitelisted_atts' => #
+                    'url'."\n".
+                    'title'."\n".
+                    ''."\n".
+                    'get_var'."\n".
+                    'post_var'."\n".
+                    'cookie_var'."\n".
+                    'request_var'."\n".
+                    'query_var'."\n".
+                    'server_var:HTTP_HOST|SERVER_PORT|REQUEST_URI|PATH_INFO|HTTP_USER_AGENT|REMOTE_ADDR|HTTP_REFERER'."\n".
+                    ''."\n".
+                    'time'."\n".
+                    'utc_time'."\n".
+                    'strtotime'."\n".
+                    ''."\n".
+                    'md5'."\n".
+                    'sha1'."\n".
+                    'encrypt'."\n".
+                    '#decrypt'."\n".
+                    'unique_id'."\n".
+                    ''."\n".
+                    'user:ID|login|nicename|email|first_name|last_name|display_name|avatar|ip|ip_region|ip_country'."\n".
+                    '#user_option:[replace this w/ whitelisted keys]'."\n".
+                    '#user_meta:[replace this w/ whitelisted keys]'."\n".
+                    '#user_meta_values:[replace this w/ whitelisted keys]'."\n".
+                    ''."\n".
+                    'post:parent|ID|guid|type|mime_type|name|title|permalink|excerpt|status|comment_status|comment_count|ping_status|menu_order'."\n".
+                    'post_published_time'."\n".
+                    'post_modified_time'."\n".
+                    'post_published_time_ago'."\n".
+                    'post_modified_time_ago'."\n".
+                    ''."\n".
+                    '#post_meta:[replace this w/ whitelisted keys]'."\n".
+                    '#post_meta_values:[replace this w/ whitelisted keys]'."\n".
+                    '#theme_post_meta:[replace this w/ whitelisted keys; works only with themes by WP Sharks]'."\n".
+                    '#theme_post_meta_values:[replace this w/ whitelisted keys; works only with themes by WP Sharks]'."\n".
+                    ''."\n".
+                    'bloginfo:name|description|wpurl|url|admin_email|charset|version|html_type|text_direction|language|stylesheet_url|stylesheet_directory|template_url|pingback_url|atom_url|rdf_url|rss_url|rss2_url|comments_atom_url|comments_rss2_url'."\n".
+                    'option:admin_email|blogname|blogdescription|blog_charset|date_format|default_category|home|siteurl|template|start_of_week|upload_path|users_can_register|posts_per_page|posts_per_rss'."\n".
+                    '#theme_option:[replace this w/ whitelisted keys; works only with themes by WP Sharks]'."\n".
+                    ''."\n".
+                    '#_id'."\n".
+                    '#_username'."\n".
+                    '#_for_blog'."\n".
+                    '_stringify_aos'."\n".
+                    '_delimiter'."\n".
+                    '_format'."\n".
+                    '_sprintf'."\n".
+                    '_escape'."\n".
+                    '_default'."\n".
+                    '_no_cache'."\n".
+                '',
+            ],
         ];
         parent::__construct($instance_base, $instance);
     }
@@ -111,9 +164,8 @@ class App extends SCoreClasses\App
 
         add_shortcode('get', [$this->Utils->Shortcode, 'onShortcode']);
 
-        // if ($this->Wp->is_admin) {
-        // Uncomment to enable a default menu page template.
-            // add_action('admin_menu', [$this->Utils->MenuPage, 'onAdminMenu']);
-        // }
+        if ($this->Wp->is_admin) {
+            add_action('admin_menu', [$this->Utils->MenuPage, 'onAdminMenu']);
+        }
     }
 }

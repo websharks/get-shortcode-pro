@@ -2,15 +2,68 @@
 # This file is distributed under the same license as the [get] Shortcode Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: [get] Shortcode Pro 170308.53312\n"
+"Project-Id-Version: [get] Shortcode Pro 170311.42794\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/get-shortcode-pro\n"
-"POT-Creation-Date: 2017-03-08 14:48:34+00:00\n"
+"POT-Creation-Date: 2017-03-11 11:53:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: src/includes/classes/Utils/MenuPage.php:51
+msgid "%1$s"
+msgstr ""
+
+#: src/includes/classes/Utils/Shortcode.php:567
+#: src/includes/classes/Utils/Shortcode.php:585
+msgid "ago"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:38
+msgid "Whitelisting Shortcode Attributes/Values"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:39
+msgid "The field below allows you to whitelist specific [get] Shortcode Attributes and even specific <code>[get attribute=\"values\"]</code>, thereby blacklisting all others that do not appear in your whitelist. A whitelist is optional, but recommended as a security measure."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:40
+msgid "Why? Because some of the data you can [get] with this plugin may expose things you'd like to keep secret in a multi-Author environment. e.g., If you have Authors besides yourself that are allowed to use Shortcodes in Posts, you don't want <code>[get server_var=\"SOMETHING_SECRET\"]</code> to work."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:41
+msgid "That's why this plugin comes with a default whitelist that effectively disables functionality that could be considered unsafe/private in a multi-Author environment. It's worth noting that the default whitelist is just fine like it is. You can customize further if you'd like, but it's not necessary."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:42
+msgid "<h3>Attribute Whitelist Syntax</h3><p>Place one Shortcode Attribute Name on each line, which adds the Attribute Name to the whitelist and allows others who can edit Posts to use that Attribute in the Shortcode. The optional <code>:</code> symbol can be used to separate the Attribute Name from a <code>|</code> pipe-delimited list of whitelisted Attribute Values. A line beginning with a <code>#</code> symbol is ignored by the parser; i.e., considered to be an internal comment only."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:43
+msgid "<strong>Don't want or need a whitelist?</strong> Just empty the field completely. When this field is completely empty, all Attributes and all Attribute Values are accepted. Security checks are only performed when you <em>do</em> have a whitelist. If you don't have a whitelist, security checks are all bypassed entirely."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:44
+msgid "Lines that contain only the Attribute Name will allow any Attribute Value; i.e., security checks against the <code>attribute=\"value\"</code> are only performed when you <em>do</em> have a pipe-delimited Attribute Value whitelist — in addition to whitelisting the Attribute Name itself. In other words, if you only whitelist the Attribute Name itself, and you don't list any Attribute Values, then any Value is accepted."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:45
+msgid "Browse our <a href=\"%1$s\" target=\"_blank\">knowledge base</a> to learn more."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:52
+msgid "Attribute Whitelist"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:53
+msgid "This allows you to whitelist specific Attributes and even specific Attribute Values."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:54
+msgid "One [get] Shortcode Attribute Name per line, following the syntax outlined above."
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "[get] Shortcode Pro"
