@@ -38,7 +38,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Initialized?
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param bool|null
      */
@@ -47,7 +47,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Whitelisted atts.
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param array|null
      */
@@ -56,7 +56,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Current user ID.
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param int|null
      */
@@ -65,7 +65,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Current shortcode.
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param string|null
      */
@@ -74,7 +74,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Current raw attributes.
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param array|null
      */
@@ -83,7 +83,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Current attributes.
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param array|null
      */
@@ -92,7 +92,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Current values.
      *
-     * @since 17xxxx
+     * @since 170311.42814
      *
      * @param array|null
      */
@@ -101,7 +101,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Class constructor.
      *
-     * @since 17xxxx Security.
+     * @since 170311.42814 Security.
      *
      * @param Classes\App $App Instance.
      */
@@ -642,7 +642,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     /**
      * Is an att/value enabled?
      *
-     * @since 17xxxx Security enhancements.
+     * @since 170311.42814 Security enhancements.
      *
      * @param string $att   Shortcode att.
      * @param string $value Attribute value.
