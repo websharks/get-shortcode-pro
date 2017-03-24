@@ -1,6 +1,6 @@
 === [get] Shortcode Pro ===
 
-Stable tag: 170324.23043
+Stable tag: 170324.25383
 
 Tested up to: 4.8
 Requires at least: 4.7

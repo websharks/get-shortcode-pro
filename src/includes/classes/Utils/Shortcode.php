@@ -495,9 +495,9 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
                     if (($_WP_User = $this->getWpUser($_att))) {
                         if ($_v) { // One property.
                             if ($_v === 'avatar_url') {
-                                $values[$_key] = get_avatar_url($_WP_User->ID, ['size' => $atts['_size'] ?: 96]);
+                                $values[$_key] = get_avatar_url($_WP_User->ID, ['size' => $atts['_size'] ?: 128]);
                             } elseif ($_v === 'avatar') {
-                                $values[$_key] = get_avatar($_WP_User->ID, $atts['_size'] ?: 96);
+                                $values[$_key] = get_avatar($_WP_User->ID, $atts['_size'] ?: 128);
                             } else {
                                 $values[$_key] = $_WP_User->{'user_'.$_v} ?? $_WP_User->{$_v} ?? null;
                             }
