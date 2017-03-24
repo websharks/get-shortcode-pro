@@ -4,7 +4,7 @@
  *
  * @wp-plugin
  *
- * Version: 170324.35079
+ * Version: 170324.35296
  * Text Domain: get-shortcode
  * Plugin Name: [get] Shortcode Pro
  *
