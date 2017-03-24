@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '170324.35296'; //v//
+    const VERSION = '170324.35863'; //v//
 
     /**
      * Constructor.
@@ -103,7 +103,7 @@ class App extends SCoreClasses\App
                     '#decrypt'."\n".
                     'unique_id'."\n".
                     ''."\n".
-                    'user:ID|login|nicename|email|first_name|last_name|display_name|avatar_url|avatar|gravatar_profile_url|ip|ip_region|ip_country'."\n".
+                    'user:ID|login|nicename|email|first_name|last_name|display_name|avatar|avatar_url|gravatar|gravatar_profile_url|ip|ip_region|ip_country'."\n".
                     '#user_option:[replace this w/ whitelisted keys]'."\n".
                     '#user_meta:[replace this w/ whitelisted keys]'."\n".
                     '#user_meta_values:[replace this w/ whitelisted keys]'."\n".
