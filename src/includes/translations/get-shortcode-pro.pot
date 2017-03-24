@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the [get] Shortcode Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: [get] Shortcode Pro 170324.21810\n"
+"Project-Id-Version: [get] Shortcode Pro 170324.22405\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/get-shortcode-pro\n"
-"POT-Creation-Date: 2017-03-24 06:03:32+00:00\n"
+"POT-Creation-Date: 2017-03-24 06:13:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,8 +16,8 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: src/includes/classes/Utils/Shortcode.php:568
-#: src/includes/classes/Utils/Shortcode.php:586
+#: src/includes/classes/Utils/Shortcode.php:570
+#: src/includes/classes/Utils/Shortcode.php:588
 msgid "ago"
 msgstr ""
 

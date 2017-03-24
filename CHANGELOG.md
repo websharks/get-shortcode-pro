@@ -1,5 +1,6 @@
 ## $v
 
+- Adding support for `user="avatar_url"`.
 - Adding `_size=""` attribute for user avatars.
 
 ## v170311.42814
