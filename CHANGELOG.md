@@ -2,6 +2,7 @@
 
 - Adding support for `user="avatar_url"`.
 - Adding `_size=""` attribute for user avatars.
+- Adding support for `user="gravatar_profile_url"`.
 
 ## v170311.42814
 
