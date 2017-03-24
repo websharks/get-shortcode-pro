@@ -1,3 +1,7 @@
+## $v
+
+- Adding `_size=""` attribute for user avatars.
+
 ## v170311.42814
 
 - Enhancing security.

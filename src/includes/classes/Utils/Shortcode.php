@@ -172,8 +172,9 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
          */
         $default_atts = [
             '_id'            => '', // User or Post ID.
-            '_username'      => '', // Username.
+            '_username'      => '', // User login name.
             '_for_blog'      => '', // A specific blog ID.
+            '_size'          => '', // A specific size.
 
             '_delimiter'     => ', ', // Delimiter if `_stringify_aos=delimit` or is empty.
             '_stringify_aos' => '', // `json-pretty`, `json`, `serialize`, `delimit`, else delimit when applicable.
@@ -494,7 +495,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
                     if (($_WP_User = $this->getWpUser($_att))) {
                         if ($_v) { // One property.
                             if ($_v === 'avatar') {
-                                $values[$_key] = get_avatar($_WP_User->ID, $_v ?: 96);
+                                $values[$_key] = get_avatar($_WP_User->ID, $atts['_size'] ?: 96);
                             } else {
                                 $values[$_key] = $_WP_User->{'user_'.$_v} ?? $_WP_User->{$_v} ?? null;
                             }
