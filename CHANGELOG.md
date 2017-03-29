@@ -1,4 +1,4 @@
-## $v
+## v170329.48046
 
 - Adding support for `user="gravatar"`.
 - Adding support for `user="avatar_url"`.
