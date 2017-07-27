@@ -36,6 +36,15 @@ use function get_defined_vars as vars;
 class Shortcode extends SCoreClasses\SCore\Base\Core
 {
     /**
+     * `[get /]` shortcode name.
+     *
+     * @since 17xxxx Tag name.
+     *
+     * @param string
+     */
+    public $tag_name;
+
+    /**
      * Initialized?
      *
      * @since 170311.42814
@@ -43,6 +52,24 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
      * @param bool|null
      */
     protected $initialized;
+
+    /**
+     * Can `eval()`?
+     *
+     * @since 17xxxx Arbitrary.
+     *
+     * @param bool|null
+     */
+    protected $can_eval;
+
+    /**
+     * Arbitrary attributes enabled?
+     *
+     * @since 17xxxx Arbitrary.
+     *
+     * @param bool|null
+     */
+    protected $enable_arbitrary_atts;
 
     /**
      * Whitelisted atts.
@@ -108,6 +135,8 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     public function __construct(Classes\App $App)
     {
         parent::__construct($App);
+
+        $this->tag_name = s::applyFilters('tag_name', 'get');
     }
 
     /**
@@ -120,8 +149,11 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
         if ($this->initialized) {
             return; // Did this already.
         }
-        $this->initialized      = true;
-        $this->whitelisted_atts = []; // Initialize.
+        $this->initialized = true;
+
+        $this->can_eval              = c::canCallFunc('eval');
+        $this->enable_arbitrary_atts = (bool) s::getOption('enable_arbitrary_atts');
+        $this->whitelisted_atts      = []; // Initialize.
 
         $whitelisted_att_lines = s::getOption('whitelisted_atts');
         $whitelisted_att_lines = preg_split('/['."\r\n".']+/u', $whitelisted_att_lines);
@@ -215,6 +247,12 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
         $this->current_values     = [];
 
         /*
+         * Globalize current atts so functions can read them when necessary.
+         * e.g., For arbitrary attributes that call upon custom global functions.
+         */
+        $GLOBALS['current_'.$this->tag_name.'_shortcode_atts'] = &$this->current_atts;
+
+        /*
          * Do shortcode.
          */
         $this->getValues();
@@ -223,6 +261,9 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
         $this->escapeValues();
         $this->maybeNoCache();
 
+        /*
+         * Positional indexing.
+         */
         $atts   = &$this->current_atts;
         $values = &$this->current_values;
 
@@ -230,6 +271,14 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
         ksort($values, SORT_NUMERIC); // Positional indexing.
         // e.g.,`1s-user="" 2s-user="" _sprintf="%1$s %2$s"`.
 
+        /*
+         * Ditch these now & keep the global environment clean.
+         */
+        unset($GLOBALS['current_'.$this->tag_name.'_shortcode_atts']);
+
+        /*
+         * Return shortcode output now.
+         */
         if ($atts['_sprintf']) {
             return (string) @sprintf($atts['_sprintf'], ...$values);
         } else {
@@ -627,8 +676,34 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
                     }
                     break; // Break here.
 
-                default: // Not possible.
-                    $values[$_key] = null;
+                /*
+                 * `[arbitrary function]="[parameter]"` (if enabled).
+                 */
+                default: // Arbitrary, else fail because they're not possible.
+                    // NOTE: We wouldn't be here unless it is also whitelisted on top
+                    // of arbitrary atts being enabled too. So this is secured nicely.
+
+                    if ($this->enable_arbitrary_atts && $this->can_eval) {
+                        // Require a PHP function that has a `get_` prefix.
+                        $_arbitrary_att = 'get_'.$_att; // Hard-coded prefix.
+                        $_arbitrary_v   = $_v; // Initialize with a copy of `$_v`.
+
+                        if (isset($_arbitrary_v[0]) && is_numeric($_arbitrary_v)) {
+                            // NOTE: To pass a numeric string literal, wrap it in quotes; e.g., '123', '45.06', etc.
+                        } elseif ($_arbitrary_v && in_array(mb_strtolower($_arbitrary_v), ['true', 'false', 'null'], true)) {
+                            // NOTE: To pass a string literal, wrap it in quotes; e.g., 'true', 'false', 'null'.
+                        } else { // Becomes a quoted string literal.
+                            $_arbitrary_v = c::sQuote($_arbitrary_v, true);
+                        }
+                        try { // We can catch problems in PHP 7+.
+                            $values[$_key] = c::phpEval('return '.$_arbitrary_att.'('.$_arbitrary_v.');');
+                        } catch (\Throwable $_eval_Throwable) {
+                            $values[$_key] = null;
+                            unset($_eval_Throwable);
+                        }
+                    } else {
+                        $values[$_key] = null;
+                    }
                     break; // Break here.
             }
             if ($_uen && $values[$_key] && is_scalar($values[$_key])) {
@@ -642,8 +717,8 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
             if (($_esc || $_raw) && !isset($atts['_escape'][0])) {
                 $atts['_escape'] = 'false'; // Disable global escape.
             }
-        } // unset($_att, $_v, $_m, $_key, $_uen, $_esc, $_raw);
-        // unset($_WP_User, $_WP_Post, $_WP_Sharks_Theme); // Housekeeping.
+        } // unset($_att, $_arbitrary_att, $_v, $_arbitrary_v, $_m, $_key, $_uen, $_esc, $_raw);
+        // unset($_WP_User, $_WP_Post, $_WP_Sharks_Theme); // Just a little more housekeeping here.
     }
 
     /**

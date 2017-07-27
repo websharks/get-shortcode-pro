@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '170329.48046'; //v//
+    const VERSION = '170727.25797'; //v//
 
     /**
      * Constructor.
@@ -82,7 +82,8 @@ class App extends SCoreClasses\App
 
             '§pro_option_keys' => [],
             '§default_options' => [
-                'whitelisted_atts' => #
+                'enable_arbitrary_atts' => false,
+                'whitelisted_atts'      => #
                     'url'."\n".
                     'title'."\n".
                     ''."\n".
@@ -164,7 +165,7 @@ class App extends SCoreClasses\App
     {
         parent::onSetupOtherHooks();
 
-        add_shortcode('get', [$this->Utils->Shortcode, 'onShortcode']);
+        add_shortcode($this->Utils->Shortcode->tag_name, [$this->Utils->Shortcode, 'onShortcode']);
 
         if ($this->Wp->is_admin) {
             add_action('admin_menu', [$this->Utils->MenuPage, 'onAdminMenu']);
