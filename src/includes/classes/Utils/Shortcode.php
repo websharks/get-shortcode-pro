@@ -684,9 +684,11 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
                     // of arbitrary atts being enabled too. So this is secured nicely.
 
                     if ($this->enable_arbitrary_atts && $this->can_eval) {
-                        // Require a PHP function that has a `get_` prefix.
-                        $_arbitrary_att = 'get_'.$_att; // Hard-coded prefix.
-                        $_arbitrary_v   = $_v; // Initialize with a copy of `$_v`.
+                        if (!function_exists($_arbitrary_att = $_att)) {
+                            $_arbitrary_att = 'get_'.$_arbitrary_att;
+                        } // Auto-add `get_` prefix.
+
+                        $_arbitrary_v = $_v; // Initialize with a copy of `$_v`.
 
                         if (isset($_arbitrary_v[0]) && is_numeric($_arbitrary_v)) {
                             // NOTE: To pass a numeric string literal, wrap it in quotes; e.g., '123', '45.06', etc.
